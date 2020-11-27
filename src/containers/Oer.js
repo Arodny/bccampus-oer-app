@@ -18,6 +18,7 @@ const OerItem = (props) => {
             <div className={props.isOpen ? `${styles.Info} ${styles.InfoOpen}` : styles.Info}>
                 <div className={styles.Content}>
                     {
+                        /* map through each property stored in this oer's meta and display it */
                          Object.keys(props.oer.meta).map(item => {
                              return(
                                 <p key={item}><b>{item}:</b> {props.oer.meta[item].value}</p>
@@ -158,6 +159,7 @@ class Oer extends React.Component {
                         });
                     })
                     .catch(err => {
+                        // TODO: - Find a graphical way to show this error to the user
                         console.log(err);
                     });
             }
@@ -167,9 +169,11 @@ class Oer extends React.Component {
     render() {
         return(
             <div>
+                { /* Show the loading icon or error message depending on state */}
                 {this.state.loading ? <div className="loader"></div> : null}
                 {this.state.error ? <p className="error">{this.state.error}</p> : null}
 
+                { /* maps through each oer in state and displays it */ }
                 <div>
                     {this.state.oers.map((oer, index) => {
                         return(
@@ -177,7 +181,8 @@ class Oer extends React.Component {
                         );
                     })}
                 </div>
-
+                
+                {/* Controls for pagination */}
                 <div className="OerControls">
 
                     <p>Showing {this.state.oers.length} out of {this.state.total} results</p>
@@ -190,6 +195,7 @@ class Oer extends React.Component {
                     </div>
 
                 </div>
+
             </div>
         );
     }

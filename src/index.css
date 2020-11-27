@@ -69,7 +69,7 @@ body {
   margin: 2em 0;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   .OerSection {
     width: 50%;
     margin: auto;

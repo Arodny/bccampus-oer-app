@@ -22,6 +22,14 @@
 .OerItem .OerItemTop h3 {
     margin: 0;
     color: #333;
+    font-size: 100%;
+    text-align: left;
+}
+
+@media screen and (min-width: 800px) {
+    .OerItem .OerItemTop h3 {
+        font-size: 115%;
+    }
 }
 
 .OerItem .OerItemTop .Chevron {
@@ -46,13 +54,11 @@
 
 @keyframes example {
     0%   {
-        height: 30px;
         opacity: 0;
-        margin-top: -30px;
+        margin-top: -50px;
         padding: 0;
     }
     90% {
-        height: auto;
         opacity: 0;
         margin-top: 0px;
         padding: 1em;
