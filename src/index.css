@@ -7,7 +7,121 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.Header {
+  background-color: #59f;
+  text-align: left;
+  background-image: linear-gradient(45deg, rgb(39, 110, 216) , rgb(131, 177, 247));
+}
+
+.Header h1 {
+  color: #eee;
+  font-size: 300%;
+  margin: 30px 0 0 1em;
+}
+
+.Header h2 {
+  color: rgb(21, 21, 124);
+  font-weight: normal;
+  font-size: 175%;
+  margin: 0px 0 0 3em;
+}
+
+.Header .Graphic {
+  background: url('graphic.svg') no-repeat;
+  height: 100px;
+  background-size: cover;
+  background-position: bottom left;
+}
+
+@media screen and (min-width: 2000px) {
+  .Header .Graphic {
+    height: 200px;
+  }
+}
+
+.MainContent {
+
+}
+
+.Footer {
+  margin-top: auto;
+  background-color: #eee;
+  font-size: 90%;
+  color: #444;
+  padding: 1em;
+}
+
+.OerSection {
+  padding: 1em;
+}
+
+.OerControls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2em 0;
+}
+
+@media screen and (min-width: 800px) {
+  .OerSection {
+    width: 50%;
+    margin: auto;
+  }
+
+  .OerControls {
+    flex-direction: row;
+  }
+}
+
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+.error {
+  color: red;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.Button {
+    font-size: 100%;
+    border: none;
+    background-color:#59f;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    color: #f7f7f7;
+    font-weight: bold;
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.1) inset;
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.05));
+    text-decoration: none;
+}
+
+.Button:hover {
+  cursor: pointer;
+  background-image: linear-gradient(transparent, rgba(0,0,0,0.15));
+  box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.15) inset;
 }
